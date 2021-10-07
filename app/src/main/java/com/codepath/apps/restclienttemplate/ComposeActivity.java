@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 import com.codepath.apps.restclienttemplate.models.Tweet;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
+import com.google.android.material.textfield.TextInputLayout;
 
 import org.json.JSONException;
 import org.parceler.Parcels;
@@ -25,6 +26,7 @@ public class ComposeActivity extends AppCompatActivity {
 
     EditText etCompose;
     Button btnTweet;
+    TextInputLayout textInputLayout;
 
     TwitterClient client;
 
@@ -37,6 +39,8 @@ public class ComposeActivity extends AppCompatActivity {
 
         etCompose = findViewById(R.id.etCompose);
         btnTweet = findViewById(R.id.btnTweet);
+        textInputLayout = findViewById(R.id.tiCharCounter);
+        textInputLayout.setCounterMaxLength(280);
 
         // Set click listener on button
         btnTweet.setOnClickListener(new View.OnClickListener() {
